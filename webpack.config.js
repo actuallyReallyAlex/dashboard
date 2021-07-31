@@ -3,6 +3,11 @@ const path = require('path');
 
 module.exports = {
   entry: './src/index.tsx',
+  devServer: {
+    contentBase: path.join(__dirname, 'dist'),
+    compress: true,
+    port: 9000,
+  },
   devtool: 'eval',
   mode: 'development',
   module: {
@@ -11,6 +16,10 @@ module.exports = {
         test: /\.tsx?$/,
         use: 'ts-loader',
         exclude: /node_modules/,
+      },
+      {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader'],
       },
     ],
   },
