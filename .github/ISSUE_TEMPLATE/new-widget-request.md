@@ -2,7 +2,7 @@
 name: New Widget request
 about: A request to add a new Widget to the available Widgets for your Dashboard.
 title: ''
-labels: enhancement
+labels: widget
 assignees: alexlee-dev
 
 ---
