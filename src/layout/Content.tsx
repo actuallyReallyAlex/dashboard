@@ -2,6 +2,7 @@ import * as React from "react";
 import { Col, Layout, Row } from "antd";
 import Header from "./Header";
 import PlaceholderCard from "../components/PlaceholderCard";
+import CrunchOMeter from '../features/crunch-o-meter/components/Widget';
 
 const Content: React.FunctionComponent = () => {
   return (
@@ -10,7 +11,7 @@ const Content: React.FunctionComponent = () => {
       <div id="data">
         <Row gutter={24}>
           <Col span={6}>
-            <PlaceholderCard />
+            <CrunchOMeter />
           </Col>
           <Col span={6}>
             <PlaceholderCard />
