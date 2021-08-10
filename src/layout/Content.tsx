@@ -2,7 +2,7 @@ import * as React from "react";
 import { Col, Layout, Row } from "antd";
 import Header from "./Header";
 import PlaceholderCard from "../components/PlaceholderCard";
-import CrunchOMeter from '../features/crunch-o-meter/components/Widget';
+import CrunchOMeter from "../features/crunch-o-meter/components/Widget";
 
 const Content: React.FunctionComponent = () => {
   return (

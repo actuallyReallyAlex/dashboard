@@ -3,19 +3,35 @@ import { Layout as AntdLayout, Menu } from "antd";
 import {
   DesktopOutlined,
   FileOutlined,
+  LinkOutlined,
   PieChartOutlined,
   TeamOutlined,
   UserOutlined,
 } from "@ant-design/icons";
+import { QuickLink as QuickLinkType } from "../@types";
+import QuickLink from '../components/QuickLink';
 
 const { Sider } = AntdLayout;
 const { SubMenu } = Menu;
 
-const Sidebar: React.FunctionComponent = () => {
+interface SidebarProps {
+  quickLinks: QuickLinkType[];
+}
+
+const Sidebar: React.FunctionComponent<SidebarProps> = (
+  props: SidebarProps
+) => {
+  const { quickLinks } = props;
+
   return (
     <Sider collapsible>
       <div className="logo" />
       <Menu theme="dark" defaultSelectedKeys={["1"]} mode="inline">
+        <SubMenu key="quick-links" icon={<LinkOutlined />} title="Quick Links">
+          {quickLinks.map((quickLink, i) => (
+            <QuickLink key={`quick-link-${i}`} {...quickLink} />
+          ))}
+        </SubMenu>
         <Menu.Item key="1" icon={<PieChartOutlined />}>
           Option 1
         </Menu.Item>
