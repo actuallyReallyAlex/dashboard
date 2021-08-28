@@ -1,4 +1,4 @@
-export type Icon = 'AlertOutlined' | 'CiCircleOutlined';
+export type Icon = "AlertOutlined" | "CiCircleOutlined";
 
 export interface QuickLink {
   icon: Icon;

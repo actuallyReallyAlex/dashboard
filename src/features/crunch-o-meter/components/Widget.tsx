@@ -43,8 +43,8 @@ const Widget: React.FunctionComponent = () => {
           }
         })
         .catch((error) => {
-          console.error('Error while setting the Crunch-o-Meter')
-          console.error(error)
+          console.error("Error while setting the Crunch-o-Meter");
+          console.error(error);
         });
     }
   }, [updatedAt]);

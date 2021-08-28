@@ -5,7 +5,9 @@ interface PlaceholderCardProps {
   rows?: number;
 }
 
-const PlaceholderCard: React.FunctionComponent<PlaceholderCardProps> = (props: PlaceholderCardProps) => {
+const PlaceholderCard: React.FunctionComponent<PlaceholderCardProps> = (
+  props: PlaceholderCardProps
+) => {
   const { rows } = props;
   return (
     <Card>

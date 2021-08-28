@@ -9,7 +9,7 @@ import {
   UserOutlined,
 } from "@ant-design/icons";
 import { QuickLink as QuickLinkType } from "../@types";
-import QuickLink from '../components/QuickLink';
+import QuickLink from "../components/QuickLink";
 
 const { Sider } = AntdLayout;
 const { SubMenu } = Menu;
