@@ -3,6 +3,7 @@ import { Col, Layout, Row } from "antd";
 import Header from "./Header";
 import PlaceholderCard from "../components/PlaceholderCard";
 import CrunchOMeter from "../features/crunch-o-meter/components/Widget";
+import GoalOfTheDay from "../features/goal-of-the-day/components/Widget";
 
 const Content: React.FunctionComponent = () => {
   return (
@@ -10,17 +11,11 @@ const Content: React.FunctionComponent = () => {
       <Header />
       <div id="data">
         <Row gutter={24}>
-          <Col span={6}>
+          <Col span={12}>
             <CrunchOMeter />
           </Col>
-          <Col span={6}>
-            <PlaceholderCard />
-          </Col>
-          <Col span={6}>
-            <PlaceholderCard />
-          </Col>
-          <Col span={6}>
-            <PlaceholderCard />
+          <Col span={12}>
+            <GoalOfTheDay />
           </Col>
         </Row>
 
