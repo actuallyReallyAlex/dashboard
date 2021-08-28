@@ -21,6 +21,34 @@ module.exports = {
         test: /\.css$/i,
         use: ['style-loader', 'css-loader'],
       },
+      {
+        test: /\.svg$/,
+        use: [
+          {
+            loader: '@svgr/webpack',
+            options: {
+              titleProp: true,
+            },
+          },
+        ],
+      },
+      // Data inline
+      // {
+      //   test: /\.svg/,
+      //   type: 'asset/inline',
+      // },
+      // SVG URL loader
+      // {
+      //   test: /\.svg$/,
+      //   use: [
+      //     {
+      //       loader: 'svg-url-loader',
+      //       options: {
+      //         limit: 10000,
+      //       },
+      //     },
+      //   ],
+      // },
     ],
   },
   output: {
