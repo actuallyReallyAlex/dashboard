@@ -3,9 +3,13 @@
   width: 100%;
 }
 
-#application {
+#application, #walkthrough {
   height: 100%;
   width: 100%;
+}
+
+#walkthrough {
+  height: 100vh;
 }
 
 .logo {

@@ -6,6 +6,7 @@ import useLocalStorage from "../../../hooks/useLocalstorage";
 
 const { Title } = Typography;
 
+// TODO - Use Antd Form
 const Widget: React.FunctionComponent = () => {
     const [goal, setGoal] = useLocalStorage<string>('goalOfTheDay-goal', '');
     const [isCreateModalVisible, setIsCreateModalVisible] = React.useState<boolean>(false);
