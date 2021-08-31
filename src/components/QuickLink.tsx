@@ -26,7 +26,7 @@ const QuickLink: React.FunctionComponent<QuickLinkProps> = (
   const Icon = icons[icon];
 
   return (
-    <Menu.Item>
+    <Menu.Item key={name}>
       <Button href={url} icon={<Icon />} target="_blank" type="link">
         {name}
       </Button>
