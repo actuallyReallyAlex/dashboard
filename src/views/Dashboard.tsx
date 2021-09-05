@@ -4,6 +4,8 @@ import { QuickLink } from "../@types";
 import Footer from "../layout/Footer";
 import Sidebar from "../layout/Sidebar";
 import Content from "../layout/Content";
+import AddWidgetModal from "../modals/AddWidget";
+import { Configuration } from "../@types";
 
 // TODO - Create way for user to create quick links in the application
 const quickLinks: QuickLink[] = [
@@ -19,12 +21,31 @@ const quickLinks: QuickLink[] = [
   },
 ];
 
-const Dashboard = () => {
+interface DashboardProps {
+  configuration: Configuration;
+  setConfiguration: (configuration: Configuration) => void;
+}
+
+const Dashboard = (props: DashboardProps) => {
+  const { configuration, setConfiguration } = props;
+  const [isAddWidgetModalVisible, setIsAddWidgetModalVisible] =
+    React.useState<boolean>(false);
+
   return (
     <Layout id="application">
-      <Sidebar quickLinks={quickLinks} />
+      <Sidebar
+        quickLinks={quickLinks}
+        setConfiguration={setConfiguration}
+        setIsAddWidgetModalVisible={setIsAddWidgetModalVisible}
+      />
       <Layout className="site-layout">
-        <Content />
+        <Content configuration={configuration} />
+        <AddWidgetModal
+          configuration={configuration}
+          isAddWidgetModalVisible={isAddWidgetModalVisible}
+          setConfiguration={setConfiguration}
+          setIsAddWidgetModalVisible={setIsAddWidgetModalVisible}
+        />
         <Footer />
       </Layout>
     </Layout>

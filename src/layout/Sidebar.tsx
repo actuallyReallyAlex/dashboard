@@ -1,6 +1,7 @@
 import * as React from "react";
 import { Layout as AntdLayout, Menu } from "antd";
 import {
+  AppstoreAddOutlined,
   DesktopOutlined,
   FileOutlined,
   LinkOutlined,
@@ -8,20 +9,26 @@ import {
   TeamOutlined,
   UserOutlined,
 } from "@ant-design/icons";
-import { QuickLink as QuickLinkType } from "../@types";
-import QuickLink from '../components/QuickLink';
+import { Configuration, QuickLink as QuickLinkType } from "../@types";
+import QuickLink from "../components/QuickLink";
 
 const { Sider } = AntdLayout;
 const { SubMenu } = Menu;
 
 interface SidebarProps {
   quickLinks: QuickLinkType[];
+  setConfiguration: (configuration: Configuration) => void;
+  setIsAddWidgetModalVisible: (isAddWidgetModalVisible: boolean) => void;
 }
 
 const Sidebar: React.FunctionComponent<SidebarProps> = (
   props: SidebarProps
 ) => {
-  const { quickLinks } = props;
+  const { quickLinks, setConfiguration, setIsAddWidgetModalVisible } = props;
+
+  const handleAddWidget = () => {
+    setIsAddWidgetModalVisible(true);
+  }
 
   return (
     <Sider collapsible>
@@ -49,6 +56,9 @@ const Sidebar: React.FunctionComponent<SidebarProps> = (
         </SubMenu>
         <Menu.Item key="9" icon={<FileOutlined />}>
           Files
+        </Menu.Item>
+        <Menu.Item key="add-widget" icon={<AppstoreAddOutlined />} onClick={handleAddWidget}>
+          Add Widget
         </Menu.Item>
       </Menu>
     </Sider>
