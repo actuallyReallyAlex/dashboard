@@ -1,4 +1,26 @@
-import { FormItem } from "./@types";
+import React from "react";
+import { Configuration, FormItem } from "./@types";
+import PlaceholderCard from "./components/PlaceholderCard";
+import CrunchOMeter from "./features/crunch-o-meter/components/Widget";
+import GoalOfTheDay from "./features/goal-of-the-day/components/Widget";
+
+export const defaultConfiguration: Configuration = [
+  [
+    { size: 12, widget: "crunch-o-meter" },
+    { size: 12, widget: "goal-of-the-day" },
+  ],
+  [{ size: 24, widget: "placeholder-card" }],
+  [{ size: 24, widget: "placeholder-card" }],
+  [{ size: 24, widget: "placeholder-card" }],
+];
+
+export const widgets: {
+  [index: string]: React.FunctionComponent<{}>;
+} = {
+  "crunch-o-meter": CrunchOMeter,
+  "goal-of-the-day": GoalOfTheDay,
+  "placeholder-card": PlaceholderCard,
+};
 
 export const formSteps: FormItem[] = [
   {
